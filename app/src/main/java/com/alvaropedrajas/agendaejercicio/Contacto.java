@@ -1,6 +1,8 @@
 package com.alvaropedrajas.agendaejercicio;
 
 
+import android.graphics.drawable.Drawable;
+
 import java.io.Serializable;
 
 public class Contacto implements Serializable{
@@ -8,8 +10,14 @@ public class Contacto implements Serializable{
     private String mail;
     private Integer telefono;
 
-    public Contacto(){
 
+    public Contacto(){
+        super();
+    }
+
+    public Contacto(String nombre, Integer telefono){
+        this.nombre = nombre;
+        this.telefono = telefono;
     }
 
     public Contacto(String nombre, String mail, Integer telefono) {
@@ -41,7 +49,6 @@ public class Contacto implements Serializable{
     public void setTelefono(Integer telefono) {
         this.telefono = telefono;
     }
-
 
 
     @Override

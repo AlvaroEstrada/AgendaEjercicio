@@ -2,8 +2,8 @@ package com.alvaropedrajas.agendaejercicio;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int BAJA = 200;
     private static final int LISTAR = 300;
 
-    private List<Contacto> listaContactos = new ArrayList<>();
+    private ArrayList<Contacto> listaContactos = new ArrayList<>();
 
 
     @Override
@@ -74,9 +74,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.startActivityForResult(intDel, BAJA);
                 break;
             case R.id.btnList:
-
+                Intent intList = new Intent(this, ListActivity.class);
+                intList.putExtra("listaC", listaContactos);
+                this.startActivityForResult(intList, LISTAR);
                 break;
-
         }
 
     }

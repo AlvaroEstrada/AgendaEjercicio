@@ -1,6 +1,7 @@
 package com.alvaropedrajas.agendaejercicio;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,6 +18,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     EditText et_name, et_mail, et_phone;
     String nom, mail;
     Integer tel;
+    Drawable img;
 
     boolean regFlag;
 
@@ -66,6 +68,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             Toast.makeText(this, "¡Debes rellenar todos los campos!", Toast.LENGTH_LONG).show();
             return;
         }
+
     }
 
     public Contacto regDatos(String nom, String mail, Integer tel){
