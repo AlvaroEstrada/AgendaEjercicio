@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,24 +40,24 @@ public class ContactoAdaptador extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View rowView = convertView;
+        View item_lista = convertView;
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            rowView = inflater.inflate(R.layout.item_contact, parent, false);
+            item_lista = inflater.inflate(R.layout.item_contact, parent, false);
         }
 
-        TextView nombre = (TextView) rowView.findViewById(R.id.tv_name);
-        TextView telefono = (TextView) rowView.findViewById(R.id.tv_phone);
-        TextView mail = (TextView) rowView.findViewById(R.id.tv_mail);
-        ImageView img = (ImageView) rowView.findViewById(R.drawable.ic_action_name);
+        TextView nombre = (TextView) item_lista.findViewById(R.id.tv_name);
+        TextView telefono = (TextView) item_lista.findViewById(R.id.tv_phone);
+        TextView mail = (TextView) item_lista.findViewById(R.id.tv_mail);
+        ImageView img = (ImageView) item_lista.findViewById(R.drawable.ic_action_name);
 
         Contacto contacto = this.contactos.get(position);
         nombre.setText(contacto.getNombre().toString());
         telefono.setText(contacto.getTelefono().toString());
         mail.setText(contacto.getMail().toString());
 
-        return rowView;
+        return item_lista;
     }
 
 
